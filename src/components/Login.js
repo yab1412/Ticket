@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-// Create a wrapper component to use hooks with class components
 function LoginWithNavigate(props) {
   const navigate = useNavigate();
   return <Login {...props} navigate={navigate} />;
@@ -26,7 +25,7 @@ class Login extends Component {
     console.log('Login attempt with:', { email, password });
 
     try {
-      const response = await fetch('http://localhost:2000/api/auth/login', {
+      const response = await fetch('https://ticket-back-7juy.onrender.com/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -41,7 +40,6 @@ class Login extends Component {
         localStorage.setItem('token', data.token);
         this.setState({ successMessage: 'Login successful!' });
         
-        // Use navigate instead of history.push
         if (data.role === 'admin') {
           this.props.navigate('/admin-dashboard');
         } else {

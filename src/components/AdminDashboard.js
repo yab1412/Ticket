@@ -13,7 +13,7 @@ class AdminDashboard extends Component {
   fetchAllTickets = async () => {
     const token = localStorage.getItem('token');
     try {
-      const response = await fetch('http://localhost:2000/api/tickets', {
+      const response = await fetch('https://ticket-back-7juy.onrender.com/api/tickets', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -36,7 +36,7 @@ class AdminDashboard extends Component {
   handleStatusChange = async (ticketId, newStatus) => {
     const token = localStorage.getItem('token');
     try {
-      const response = await fetch(`http://localhost:2000/api/tickets/${ticketId}`, {
+      const response = await fetch(`https://ticket-back-7juy.onrender.com/api/tickets/${ticketId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

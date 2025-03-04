@@ -20,7 +20,7 @@ class Signup extends Component {
     const { username, email, password, role } = this.state;
 
     try {
-      const response = await fetch('http://localhost:2000/api/auth/signup', {
+      const response = await fetch('https://ticket-back-7juy.onrender.com/api/auth/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

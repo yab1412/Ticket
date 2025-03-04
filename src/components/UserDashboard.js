@@ -16,7 +16,7 @@ class UserDashboard extends Component {
   fetchUserTickets = async () => {
     const token = localStorage.getItem('token');
     try {
-      const response = await fetch('http://localhost:2000/api/tickets', {
+      const response = await fetch('https://ticket-back-7juy.onrender.com/api/tickets', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -46,7 +46,7 @@ class UserDashboard extends Component {
     const token = localStorage.getItem('token');
 
     try {
-      const response = await fetch('http://localhost:2000/api/tickets', {
+      const response = await fetch('https://ticket-back-7juy.onrender.com/api/tickets', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
